@@ -8,7 +8,7 @@ const { XMLParser } = require("fast-xml-parser");
 const express = require('express');
 const app = express();
 
-app.post('/readCdr', async (req, res) => {
+app.post('/', async (req, res) => {
     try {
         logger.info("Hello logs!");
         const fileUrl = "https://firebasestorage.googleapis.com/v0/b/d-360-7e9d0.appspot.com/o/invoice%2Fcdr%2FR-10237098931-01-F001-30.zip?alt=media&token=d58bd9d2-cf49-4c8d-a49d-7d6d347e579a";
@@ -34,4 +34,4 @@ app.post('/readCdr', async (req, res) => {
     }
 });
 
-exports.app = onRequest(app);
+exports.readCdr = onRequest(app);
